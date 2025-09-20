@@ -1,0 +1,30 @@
+import sys
+N = int(sys.stdin.readline())
+arr = list(map(int, sys.stdin.readline().split(" ")))
+al_srt = False
+
+if arr == sorted(arr):
+    al_srt = True
+if N == 1:
+    al_srt = True
+
+if al_srt == False:
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(N - 2):
+            if arr[i] > arr[i+2]:
+                arr[i], arr[i+2] = arr[i+2], arr[i]
+                swapped = True
+if al_srt:
+    print('YES')
+else:
+    if arr == sorted(arr):
+        print('YES')
+    else:
+        print('NO')
+
+
+
+            
+
